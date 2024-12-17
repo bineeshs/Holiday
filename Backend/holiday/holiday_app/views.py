@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from django.core.cache import cache
 from .tests import fetch_holidays_from_api  
 from rest_framework import status
-from holiday_app.models import Holiday
 
 class GetHolidays(APIView):
 
