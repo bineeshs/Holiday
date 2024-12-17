@@ -9,6 +9,24 @@ from rest_framework import status
 class GetHolidays(APIView):
 
     def get(self, request):
+        """
+        Handles GET requests to fetch holidays for a given country and year,
+        with optional filters for month, type, and date range.
+
+        Query Parameters:
+        - country (str, required): Country code in ISO 3166-1 alpha-2 format.
+        - year (int, required): Year for which holidays are fetched.
+        - type (str, optional): Type of holiday to filter (e.g., National, Religious).
+        - month (int, optional): Month (1-12) to filter holidays.
+        - start_date (str, optional): Start date to filter holidays (YYYY-MM-DD).
+        - end_date (str, optional): End date to filter holidays (YYYY-MM-DD).
+
+        Returns:
+        - 200: Filtered list of holidays.
+        - 400: Bad Request if required parameters are missing.
+        - 404: If no holidays match the criteria.
+        - 500: If an internal server error occurs or API fails.
+        """
         try: 
             country = request.GET.get('country')
             year = request.GET.get('year')
@@ -22,6 +40,7 @@ class GetHolidays(APIView):
                 return Response({"error": "country and year are required"}, status=status.HTTP_400_BAD_REQUEST)
 
             
+            # Check cache for holidays data 
             cache_key = f"holidays_{country}_{year}"
             holidays = cache.get(cache_key)
             
@@ -30,7 +49,8 @@ class GetHolidays(APIView):
                 if data and 'response' in data:
                     if data['response'] and 'holidays' in data['response']:
                        holidays = data['response']['holidays']
-                   
+                       
+                       # Cache the holidays for 24 hours
                        cache.set(cache_key, holidays, timeout=86400)
                     else:
                         holidays = []
@@ -47,8 +67,8 @@ class GetHolidays(APIView):
                     if country in holiday['country']['id'].upper(): 
                         add_to_filtered =  False                           
                         
-                        if month or  type or from_date or  to_date: 
-                            
+                        # Process and filter holidays
+                        if month or  type or from_date or  to_date:                             
                             dct_temp_data = {}
                             add_to_filtered =  True                                                        
                             if month and holiday['date']['datetime']['month'] == int(month):
