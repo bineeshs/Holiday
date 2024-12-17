@@ -27,8 +27,7 @@ class GetHolidays(APIView):
             holidays = cache.get(cache_key)
             
             if not holidays:
-                data = fetch_holidays_from_api(country, year) 
-                print('innnn')          
+                data = fetch_holidays_from_api(country, year)                           
                 if data and 'response' in data:
                     if data['response'] and 'holidays' in data['response']:
                        holidays = data['response']['holidays']
@@ -40,10 +39,7 @@ class GetHolidays(APIView):
                     return Response({"error": "No data from API"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
             
             else:
-                print("Returning cached holidays")          
-
-
-            
+                print("Returning cached holidays")  
            
             if holidays:
                 filtered_holidays = [] 
@@ -94,9 +90,7 @@ class GetHolidays(APIView):
                             if dct_temp_data:                               
                                filtered_holidays.append(dct_temp_data)                            
                         else:
-                            filtered_holidays.append(holiday)
-
-                print(len(filtered_holidays))
+                            filtered_holidays.append(holiday)                
 
                 if not filtered_holidays:
                     return Response({"message": "No data Found", "status_code": 400}, status=status.HTTP_404_NOT_FOUND, )
