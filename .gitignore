@@ -1,0 +1,73 @@
+
+# Compiled output
+holiday-app/dist
+holiday-app/tmp
+holiday-app/out-tsc
+holiday-app/bazel-out
+
+# Node
+holiday-app/node_modules
+holiday-app/npm-debug.log
+holiday-app/yarn-error.log
+
+# IDEs and editors
+holiday-app/.idea/
+holiday-app/.project
+holiday-app/.classpath
+holiday-app/.c9/
+holiday-app/*.launch
+holiday-app/.settings/
+holiday-app/*.sublime-workspace
+
+# Visual Studio Code
+holiday-app/.vscode/*
+holiday-app/!.vscode/settings.json
+holiday-app/!.vscode/tasks.json
+holiday-app/!.vscode/launch.json
+holiday-app/!.vscode/extensions.json
+holiday-app/.history/*
+
+# Miscellaneous
+holiday-app/.angular/cache
+holiday-app/.sass-cache/
+holiday-app/connect.lock
+holiday-app/coverage
+holiday-app/libpeerconnection.log
+holiday-app/testem.log
+holiday-app/typings
+
+# System files
+holiday-app/.DS_Store
+holiday-app/Thumbs.db
+
+# dependencies
+holiday-app/node_modules
+holiday-app/.pnp
+holiday-app/.pnp.js
+
+# testing
+holiday-app/coverage
+
+# production
+holiday-app/build
+
+# misc
+holiday-app/.DS_Store
+holiday-app/.env.local
+holiday-app/.env.development.local
+holiday-app/.env.test.local
+holiday-app/.env.production.local
+
+holiday-app/npm-debug.log*
+holiday-app/yarn-debug.log*
+holiday-app/yarn-error.log*
+
+
+
+# BACKEND 
+
+Backend/*.pyc￼
+Backend/__pycache__
+Backend/log
+Backend/static_root/media/*
+
