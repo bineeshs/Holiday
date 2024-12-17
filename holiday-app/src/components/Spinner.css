@@ -1,40 +1,40 @@
-/* Center the spinner in the middle of the screen */
+
 .spinner-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark background with transparency */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
   }
   
-  /* Spinner style */
+
   .spinner {
-    border: 8px solid #f3f3f3; /* Light grey background */
-    border-top: 8px solid #3498db; /* Blue color for the spinner */
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db; 
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 1s linear infinite; /* Animation to spin */
+    animation: spin 1s linear infinite; 
   }
   
-  /* Button styles */
+ 
   button:disabled {
-    background-color: #d3d3d3; /* Light grey for disabled button */
-    cursor: not-allowed; /* Prevent clicking */
-    opacity: 0.6; /* Reduce opacity to indicate disabled state */
+    background-color: #d3d3d3; 
+    cursor: not-allowed; 
+    opacity: 0.6; 
   }
   
-  /* Button active state (on click) */
+  
   button:active {
-    background-color: #3e8e41; /* Darker green when clicked */
+    background-color: #3e8e41; 
   }
   
-  /* Spinner animation */
+  
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

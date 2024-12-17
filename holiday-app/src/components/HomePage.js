@@ -9,9 +9,6 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
 
-
-
-
 function HomePage({ setHolidays, setSearchParams }) {
   const [country, setCountry] = useState(null);
   const [year, setYear] = useState("");
@@ -122,7 +119,7 @@ function HomePage({ setHolidays, setSearchParams }) {
     }
 
     finally {
-      setLoading(false); // Set loading to false after the request is finished
+      setLoading(false); 
     }
   };
 
