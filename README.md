@@ -176,6 +176,7 @@ CALENDARIFIC_API_KEY=your_api_key_here
 - The holiday data is **cached for 24 hours** for each country-year combination to minimize API usage.
 - Tailwind CSS ensures the application is fully **responsive** for both desktop and mobile users.
 - Handle any errors gracefully, including invalid API requests.
+- live demo: http://16.170.212.63/
 
 ---
 
