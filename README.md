@@ -118,7 +118,7 @@ The project consists of:
 
 1. **Navigate to the frontend folder**:
    ```bash
-   cd frontend
+   cd holiday-app
    ```
 
 2. **Install dependencies**:
